@@ -3,13 +3,7 @@ import streamlit as st
 import openai
 from openai import OpenAI
 
-# Initialize OpenAI client
 
-openai_api_key = st.sidebar.text_input('OpenAI API Key', type='password')
-client = OpenAI(api_key=openai_api_key)
-
-# Your chosen model
-MODEL = "gpt-4-1106-preview"
 
 # Set up the page
 st.set_page_config(page_title="Streamlit GPT APP")
@@ -19,6 +13,11 @@ st.sidebar.divider()
 st.sidebar.markdown("Smita", unsafe_allow_html=True)
 st.sidebar.markdown("🎓 🎓 🎓")
 st.sidebar.divider()
+
+# Initialize OpenAI client
+
+openai_api_key = st.sidebar.text_input('OpenAI API Key', type='password')
+client = OpenAI(api_key=openai_api_key)
 
 assistant = client.beta.assistants.create(
     name="Math Tutor",
