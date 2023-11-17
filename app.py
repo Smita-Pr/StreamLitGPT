@@ -29,7 +29,8 @@ assistant = client.beta.assistants.create(
 thread = client.beta.threads.create()
 
 with st.form('my_form'):
-    text = st.text_area('Enter text:', 'What math problem can I help you with ?')
+    st.info('Enter text:', 'What math problem can I help you with ?')
+    text = st.text_area()
     submitted = st.form_submit_button('Submit')
  
 message = client.beta.threads.messages.create(
