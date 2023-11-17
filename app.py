@@ -4,7 +4,9 @@ import openai
 from openai import OpenAI
 
 # Initialize OpenAI client
-client = OpenAI(api_key="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")
+
+openai_api_key = st.sidebar.text_input('OpenAI API Key', type='password')
+client = OpenAI(api_key=openai_api_key)
 
 # Your chosen model
 MODEL = "gpt-4-1106-preview"
