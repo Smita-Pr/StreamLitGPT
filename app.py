@@ -27,10 +27,10 @@ if "retry_error" not in st.session_state:
     st.session_state.retry_error = 0
 
 # Set up the page
-st.set_page_config(page_title="Enter title here")
-st.sidebar.title("Title")
+st.set_page_config(page_title="Streamlit GPT APP")
+st.sidebar.title("Learn Wardley Mapping")
 st.sidebar.divider()
-st.sidebar.markdown("Your name", unsafe_allow_html=True)
+st.sidebar.markdown("Smita", unsafe_allow_html=True)
 st.sidebar.markdown("Assistant GPT")
 st.sidebar.divider()
 
@@ -66,8 +66,8 @@ if uploaded_file is not None:
 
 # Initialize OpenAI assistant
 if "assistant" not in st.session_state:
-    openai.api_key = st.secrets["OPENAI_API_KEY"]
-    st.session_state.assistant = openai.beta.assistants.retrieve(st.secrets["OPENAI_ASSISTANT"])
+    openai.api_key = st.secrets["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"]
+    st.session_state.assistant = openai.beta.assistants.retrieve(st.secrets["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"])
     st.session_state.thread = client.beta.threads.create(
         metadata={'session_id': st.session_state.session_id}
     )
