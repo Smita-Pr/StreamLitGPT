@@ -30,7 +30,6 @@ thread = client.beta.threads.create()
 
 with st.form('my_form'):
     text = st.text_input("what Math problem can I help you with?")
-    submitted = st.form_submit_button('Submit')
  
 message = client.beta.threads.messages.create(
     thread_id=thread.id,
