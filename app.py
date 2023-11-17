@@ -47,8 +47,17 @@ run = client.beta.threads.runs.retrieve(
 messages = client.beta.threads.messages.list(
   thread_id=thread.id
 )
+
 for message in reversed(messages.data):
-    st.info(message.role + ": " + message.content[0].text.value)
+        if message.role in ["user", "assistant"]:
+            with st.info(message.role):
+                for content_part in message.content:
+                    message_text = content_part.text.value
+                    st.markdown(message_text)
+
+
+#for message in reversed(messages.data):
+ #   st.info(message.role + ": " + message.content[0].text.value)
 
  
      
